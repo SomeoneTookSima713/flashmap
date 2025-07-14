@@ -536,6 +536,7 @@ impl<'a, K, V> Evicted<'a, K, V> {
     /// write.guard().drop_lazily(b);
     /// ```
     pub fn leak(evicted: Self) -> Leaked<V> {
+        #[allow(dangerous_implicit_autorefs)]
         evicted
             .operations
             .with_mut(|ptr| unsafe { (*ptr).get_unchecked_mut(evicted.operation) }.make_leaky());

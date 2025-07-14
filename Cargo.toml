@@ -1,6 +1,6 @@
 [package]
 name = "flashmap"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Cassy343"]
 edition = "2021"
 
